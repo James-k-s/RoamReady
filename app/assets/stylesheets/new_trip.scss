@@ -1,0 +1,76 @@
+.new-trip-page-container {
+  margin: 16px;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.how-to {
+  background-color: #4a5295;
+  border-radius: 8px;
+  padding: 16px;
+  color: white;
+  width: 750px;
+  h1 {
+    margin-bottom: 16px;
+  }
+}
+
+.instructions {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 12px;
+  .instruction-number {
+    display: flex;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    color: #4a5295;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 8px;
+    p {
+      padding-top: 2px;
+    }
+  }
+}
+
+.new-task-form {
+  background-color: #4a5295;
+  padding: 16px;
+  color: white;
+  margin-left: 16px;
+  border-radius: 8px;
+  width: 100%;
+
+  .full-input-width {
+    width: 100%;
+  }
+}
+
+.form-container {
+  input, select, textarea {
+    padding: 6px;
+    margin: 8px;
+    border-radius: 8px;
+  }
+  .btn {
+    background-color: #4a5295;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    border: 1px solid white;
+    width: 100%;
+  }
+}
+
+.date-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+}

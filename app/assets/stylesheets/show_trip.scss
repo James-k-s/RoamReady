@@ -1,0 +1,28 @@
+.checklist-item {
+  list-style: none;
+  margin-bottom: 0.5em;
+}
+
+.checklist-item input[type="checkbox"] {
+  accent-color: #007bff; /* Optional: makes the checkbox blue */
+  margin-right: 0.5em;
+}
+
+
+.response-container {
+  margin: 16px;
+  border: solid 2px #4a5295;
+  padding: 16px;
+  border-radius: 8px;
+  h2, strong {
+    margin-top: 24px;
+    color: #4a5295;
+  }
+
+
+}
+
+.response-heading {
+  width: 100%;
+  display: flex;
+}

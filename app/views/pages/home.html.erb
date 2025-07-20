@@ -1,0 +1,95 @@
+<div class="page-container">
+
+  <%# NavBar start %>
+  <div class="nav-bar">
+    <div class="left-nav-items">
+        <%= link_to "Home", root_path %>
+        <%= link_to "About" %>
+    </div>
+    <div class="title-navbar">
+      <h1>RoamReady</h1>
+    </div>
+    <div class="right-nav-items">
+        <%= link_to "Your Trips", trips_path %>
+        <% if user_signed_in? %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Login", login_path %>
+        <% end %>
+    </div>
+  </div>
+  <%# NavBar end %>
+
+  <%# Banner start %>
+  <div class="home-banner">
+    <div class="banner-heading">
+      <h1>Be Ready, For Any Occasion</h1>
+      <div class="banner-text">
+        <p>Wherever you’re heading, RoamReady makes sure you’re packed, prepared, and ready for anything.</p>
+      </div>
+      <div class="banner-button">
+        <%= link_to "PLAN YOUR TRIP", new_trip_path %>
+      </div>
+    </div>
+    <div class="banner-image">
+      <%= image_tag "bannerimg.png" %>
+
+    </div>
+  </div>
+  <%# Banner End %>
+
+  <%# Going on a trip about  %>
+  <div class="about-container">
+
+    <div class="going-on-a-trip-heading">
+      <h1>Going on a trip?</h1>
+    </div>
+
+    <div class="going-on-a-trip-text">
+      <p>Let RoamReady take the stress out of packing, we’ve got your back. Whether you're hiking in the Alps or fishing in bear country, we’ll tell you exactly what to bring and what to watch out for. From gear checklists to safety tips (yes, even warning you about predators or scarce water), we cover every detail. And when you’re off the grid? No worries — we’ll bundle it all into a handy PDF so you’re ready, even without signal. Our mission? To make sure you’re prepared, safe, and confident on every adventure. So... are you RoamReady?</p>
+    </div>
+
+    <div class="get-in-touch">
+      <%= link_to "Get in touch", class: "get-in-touch" %><i class="bi bi-arrow-right"></i>
+    </div>
+
+  </div>
+  <%# Going on a trip about end %>
+
+  <%# Activity start %>
+    <div class="activity-container">
+
+      <div class="activity-card road-trip">
+        <div class="activity-text">
+          <h1>Fancy hitting the road?</h1>
+          <p>Facny hitting the road to explore?</p>
+        </div>
+        <%= image_tag "roadtrip.png" %>
+      </div>
+
+      <div class="activity-card camping">
+        <div class="activity-text">
+          <h1>Trip to the local Park</h1>
+          <p>Facny hitting the road to explore?</p>
+        </div>
+        <%= image_tag "park.png" %>
+      </div>
+
+      <div class="activity-card water-park">
+        <%= image_tag "waterpark.png" %>
+        <div class="activity-text">
+          <h1>Splash at the Water Park</h1>
+          <p>Facny hitting the road to explore?</p>
+        </div>
+      </div>
+
+      <div class="activity-card city-hopping">
+        <div class="activity-text">
+          <h1>City hopping</h1>
+          <p>Facny hitting the road to explore?</p>
+        </div>
+        <%= image_tag "city.png" %>
+      </div>
+    </div>
+  <%# Activity end %>
+</div>

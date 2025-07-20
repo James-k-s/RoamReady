@@ -1,0 +1,24 @@
+.trips-container {
+  margin: 16px;
+  padding: 16px;
+  h1 {
+    color: #4a5295;
+    margin-bottom: 24px;
+  }
+}
+
+.trips {
+  a {
+    text-decoration: none;
+    color: grey;
+  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.trip-card {
+  border: solid 2px #4a5295;
+  padding: 16px;
+  border-radius: 8px;
+}

@@ -1,0 +1,43 @@
+<div class="nav-bar">
+    <div class="left-nav-items">
+        <%= link_to "Home", root_path %>
+        <%= link_to "About" %>
+    </div>
+    <div class="title-navbar">
+      <h1>RoamReady</h1>
+    </div>
+    <div class="right-nav-items">
+        <%= link_to "Your Trips", trips_path %>
+        <% if user_signed_in? %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Login", user_session_path %>
+        <% end %>
+    </div>
+  </div>
+
+
+<div class="trips-container">
+  <h1>Your trips</h1>
+  <div class="trips">
+    <% if user_signed_in? %>
+        <% if @trips.empty? %>
+          <p>No trips found. <%= link_to "Create a new trip", new_trip_path %></p>
+        <% elsif @trips.present? %>
+          <% @trips.each do |trip| %>
+            <%= link_to trip_path(trip) do %>
+              <div class="trip-card">
+                  <h2><%= trip.name %></h2>
+                  <% if trip.place_photo_reference.present? %>
+                    <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= trip.place_photo_reference %>&key=<%= ENV['GOOGLE_API_KEY'] %>" alt="Trip Location Photo">
+                  <% end %>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+
+    <% else %>
+      <p>Please <%= link_to "login", new_user_session_path %> to view your trips.</p>
+    <% end %>
+  </div>
+</div>

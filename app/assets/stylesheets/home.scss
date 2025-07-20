@@ -1,0 +1,213 @@
+body {
+  a, p, h1, h2, h3, h4, h5, h6, li {
+     font-family: "Oswald", sans-serif;
+  }
+}
+
+.page-container {
+  width: 100%;
+  height: 100%;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  background-color: #4a5295;
+  justify-content: space-between;
+  margin-left: 16px;
+  margin-right: 16px;
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  align-items: center;
+
+}
+
+.title-navbar {
+  h1 {
+    color: white;
+    font-weight: 900;
+    font-size: 52px;
+  }
+}
+
+.right-nav-items {
+  a {
+    color: white;
+    text-decoration: none;
+    margin-right: 16px;
+  }
+  display: flex;
+  flex-direction: row;
+
+}
+
+.left-nav-items {
+  a {
+    color: white;
+    text-decoration: none;
+    margin-right: 16px;
+  }
+
+  display: flex;
+  flex-direction: row;
+}
+
+.home-banner {
+  background-color: #4a5295;
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  height: 380px;
+  justify-content: space-between;
+
+}
+
+
+.banner-heading {
+  color: white;
+  margin-top: 16px;
+  margin-left: 32px;
+  margin-bottom: 16px;
+  width: 400px;
+  h1 {
+    font-size: 72px;
+  }
+}
+
+.banner-text {
+  margin-top: 16px;
+  p {
+    font-size: 18px;
+  }
+  width: 85%;
+  margin-bottom: 32px;
+}
+
+.banner-button {
+
+  a {
+    padding: 16px;
+    width: 224px;
+    border: solid 2px white;
+    border-radius: 8px;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.banner-image {
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 680px;
+  img {
+      width: 80%;
+    }
+}
+
+.about-container {
+  margin-top: 133px;
+  margin-bottom: 100px;
+  margin-left: 16px;
+  margin-right: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  a {
+    text-decoration: none;
+    color: black;
+    margin-right: 16px;
+
+  }
+}
+
+.going-on-a-trip-text {
+  width: 788px;
+  text-align: center;
+}
+
+.going-on-a-trip-heading {
+  color: #4a5295;
+}
+
+.get-in-touch {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.activity-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 48px;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+  height: 450px;
+  margin-bottom: 100px ;
+}
+
+.activity-card {
+  background-color: #4a5295;
+  color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-radius: 8px;
+  height: 275px;
+  position: relative;
+  img {
+    position: absolute;
+    margin-bottom: 24px;
+
+    top: -40px;
+    bottom: 0;
+    width: 275px;
+    height: 315px;
+  }
+
+}
+.road-trip {
+  // background-color: #AEE0C7;
+  padding-left: 16px;
+  img {
+    right: 0;
+
+  }
+}
+
+.water-park {
+  padding-right: 16px;
+  // background-color: #7DDEFF;
+  .activity-text {
+    position: absolute;
+    right: 0;
+    margin-right: 16px;
+  }
+  img {
+    left: 0;
+  }
+}
+
+.camping {
+  // background-color: #F9EB7E;
+  padding-left: 16px;
+  img {
+
+  right: 0;
+  }
+}
+
+.city-hopping {
+  padding-left: 16px;
+  // background-color: #AEFF88
+;
+  img {
+    right: 0;
+  }
+}

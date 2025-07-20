@@ -1,0 +1,58 @@
+<div class="nav-bar">
+    <div class="left-nav-items">
+        <%= link_to "Home", root_path %>
+        <%= link_to "About" %>
+    </div>
+    <div class="title-navbar">
+      <h1>RoamReady</h1>
+    </div>
+    <div class="right-nav-items">
+        <%= link_to "Your Trips", trips_path %>
+        <% if user_signed_in? %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <% else %>
+          <%= link_to "Login", login_path %>
+        <% end %>
+    </div>
+  </div>
+
+<div class="new-trip-page-container">
+  <div class="how-to">
+    <h1>Lets create your trip.</h1>
+    <div class="instructions">
+      <div class="instruction-number">
+        <p>1</p>
+      </div>
+      <p>Fill in the fields below so we can understand your trip.</p>
+    </div>
+    <div class="instructions">
+      <div class="instruction-number">
+        <p>2</p>
+      </div>
+      <p>Let us do the magic!</p>
+    </div>
+    <div class="instructions">
+      <div class="instruction-number">
+        <p>3</p>
+      </div>
+      <p>Start packing and get ready for the adventure.</p>
+    </div>
+  </div>
+  <div class="new-task-form">
+    <h1>Create your new trip</h1>
+    <div class="form-container">
+      <%= simple_form_for @trip do |f| %>
+        <%= f.input :name, label: "Give your trip a name", placeholder: "Great adventure to Alaska", input_html: { class: "full-input-width" } %>
+        <%= f.input :companions, label: "How many fellow trip members", placeholder: "3", input_html: { class: "full-input-width" } %>
+        <%= f.input :location, label: "Where abouts are you heading🏕️", placeholder: "Alaska", input_html: { class: "full-input-width" }  %>
+        <%= f.input :activity, label: "What activity is the trip based around?", placeholder: "Fishing", input_html: { class: "full-input-width" } %>
+        <%= f.input :extra_information, label: "Add some extra information about your trip", placeholder: "Going to be camping, I heard the bugs are bad", input_html: { class: "full-input-width" } %>
+        <div class="date-flex">
+          <%= f.input :start_date, as: :date, input_html: { class: "full-input-width" } %>
+          <%= f.input :end_date, as: :date, input_html: { class: "full-input-width" } %>
+        </div>
+        <%= f.button :submit, "Create Trip", input_html: { class: "full-input-width" } %>
+      <% end %>
+    </div>
+  </div>
+</div>
