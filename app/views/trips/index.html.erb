@@ -18,7 +18,10 @@
 
 
 <div class="trips-container">
-  <h1>Your trips</h1>
+  <div class="trips-header">
+    <h1>Your trips</h1>
+    <%= link_to "Create a new trip", new_trip_path, class: "btn btn-primary" %>
+  </div>
   <div class="trips">
     <% if user_signed_in? %>
         <% if @trips.empty? %>
@@ -27,9 +30,15 @@
           <% @trips.each do |trip| %>
             <%= link_to trip_path(trip) do %>
               <div class="trip-card">
-                  <h2><%= trip.name %></h2>
+                  <div class="trip-details">
+                    <h2><%= trip.name %></h2>
+                    <p>Start date: <%= trip.start_date.strftime('%m/%d/%Y') %></p>
+                    <p>End date: <%= trip.end_date.strftime('%m/%d/%Y') %></p>
+                    <p>Destination: <%= trip.location %></p>
+                    <p>Activity: <%= trip.activity %></p>
+                  </div>
                   <% if trip.place_photo_reference.present? %>
-                    <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= trip.place_photo_reference %>&key=<%= ENV['GOOGLE_API_KEY'] %>" alt="Trip Location Photo">
+                    <img class="trip-images-index" src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= trip.place_photo_reference %>&key=<%= ENV['GOOGLE_API_KEY'] %>" alt="Trip Location Photo">
                   <% end %>
               </div>
             <% end %>

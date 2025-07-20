@@ -21,4 +21,30 @@
   border: solid 2px #4a5295;
   padding: 16px;
   border-radius: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.trip-details {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+  h2 {
+    color: #4a5295 !important;
+  }
+}
+
+.trip-images-index {
+  height: 280px;
+  width: 280px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.trips-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
 }
