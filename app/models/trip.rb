@@ -3,6 +3,7 @@ require 'httparty'
 
 class Trip < ApplicationRecord
   belongs_to :user
+  has_many :accommodations, dependent: :destroy
 
   after_create :generate_openai_response
   after_create :fetch_google_place_id_and_photo

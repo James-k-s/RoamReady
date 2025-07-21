@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  name: MyString
+  booking_url: MyString
+  address: MyString
+  trip: one
+  booked: false
+
+two:
+  user: two
+  name: MyString
+  booking_url: MyString
+  address: MyString
+  trip: two
+  booked: false

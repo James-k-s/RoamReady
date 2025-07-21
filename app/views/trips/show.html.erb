@@ -22,8 +22,12 @@
     <% if @trip.openai_response.present? %>
       <%= checklist_with_checkboxes(@formatted_content) %>
     <% end %>
-    <% if @trip.place_photo_reference.present? %>
-      <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= @trip.place_photo_reference %>&key=<%= ENV['GOOGLE_API_KEY'] %>" alt="Trip Location Photo">
-    <% end %>
   </div>
+</div>
+
+<div class="accomodation-container">
+  <h2>Accommodation</h2>
+    <p>Still looking for accommodation?</p>
+    <p>We can help you find the perfect place to stay!</p>
+    <%= link_to "Find Accommodation", class: "btn btn-primary" %>
 </div>

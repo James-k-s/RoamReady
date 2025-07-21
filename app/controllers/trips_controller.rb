@@ -27,7 +27,6 @@ class TripsController < ApplicationController
     end
   end
 
-
   private
 
   def trip_params
