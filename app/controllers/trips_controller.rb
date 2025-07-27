@@ -1,4 +1,7 @@
 class TripsController < ApplicationController
+
+    before_action :authenticate_user!, only: [:new, :create, :index, :show]
+
   def index
     if user_signed_in?
       @trips = current_user.trips

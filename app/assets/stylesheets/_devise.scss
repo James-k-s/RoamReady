@@ -1,0 +1,49 @@
+.devise-input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+
+  a {
+    color: #4a5295;
+  }
+
+}
+
+.login-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100vh;
+  h1 {
+    color: #4a5295;
+  }
+  input {
+    border-radius: 8px;
+    border: 1px solid black;
+    width: 220px;
+  }
+}
+.login-right {
+  width: 50%;
+  height: 100vh;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.actions {
+  margin-top: 8px;
+  input {
+
+    background-color: #4a5295;
+    color: white;
+  }
+}
