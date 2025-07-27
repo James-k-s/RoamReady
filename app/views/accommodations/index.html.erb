@@ -1,0 +1,30 @@
+<div class="accommodation-container">
+
+  <h1>Nearby Accommodations for <%= @trip.location %></h1>
+  <% if @nearby_places.any? %>
+  <div class="accommodations-cards">
+    <% @nearby_places.each do |place| %>
+        <%= link_to "https://www.google.com/maps/place/?q=place_id:#{place["place_id"]}", target: "_blank", rel: "noopener" do %>
+      <div class="accommodation-card">
+          <% if place["photos"] && place["photos"].first %>
+            <img src="https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= place["photos"].last["photo_reference"] %>&key=<%= ENV['GOOGLE_API_KEY'] %>" alt="Accommodation Photo">
+          <% else %>
+            <%= image_tag "placeholderImage.png", alt: "No photo available" %>
+          <% end %>
+        <div class="card-details-accommodation">
+          <h5><%= place["name"] %></h5>
+          <p>Address: <%= place["vicinity"] %></p>
+          <% if place["rating"] %>
+            <p>Rating: <%= place["rating"] %> / 5</p>
+          <% end %>
+        </div>
+      </div>
+        <% end %>
+    <% end %>
+
+  <% else %>
+    <p>No nearby accommodations found.</p>
+  </div>
+  <% end %>
+
+</div>

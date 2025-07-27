@@ -11,7 +11,7 @@
         <% if user_signed_in? %>
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <% else %>
-          <%= link_to "Login",  %>
+          <%= link_to "Login"  %>
         <% end %>
     </div>
   </div>
@@ -29,5 +29,5 @@
   <h2>Accommodation</h2>
     <p>Still looking for accommodation?</p>
     <p>We can help you find the perfect place to stay!</p>
-    <%= link_to "Find Accommodation", class: "btn btn-primary" %>
+    <%= link_to "Find Accommodation", trip_accommodations_path(trip_id: @trip.id)%>
 </div>

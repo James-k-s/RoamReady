@@ -8,8 +8,6 @@ class Trip < ApplicationRecord
   after_create :generate_openai_response
   after_create :fetch_google_place_id_and_photo
 
-  private
-
   def fetch_google_place_id_and_photo
     puts "Fetching place id for: #{self.location}"
 
@@ -50,6 +48,33 @@ class Trip < ApplicationRecord
 
     end
   end
+
+  def fetch_lat_lng_from_place_id(place_id)
+    details_url = "https://maps.googleapis.com/maps/api/place/details/json"
+    details_params = {
+      place_id: place_id,
+      fields: "geometry",
+      key: ENV['GOOGLE_API_KEY']
+    }
+    details_response = HTTParty.get(details_url, query: details_params)
+    location = details_response.parsed_response.dig("result", "geometry", "location")
+    # Returns a hash: { "lat" => ..., "lng" => ... }
+  end
+
+  def fetch_nearby_places(lat, lng, type: "lodging", radius: 2000)
+    nearby_url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json"
+    nearby_params = {
+      location: "#{lat},#{lng}",
+      radius: radius, # in meters
+      type: type,     # e.g., "lodging" for hotels, "restaurant", etc.
+      key: ENV['GOOGLE_API_KEY']
+    }
+    response = HTTParty.get(nearby_url, query: nearby_params)
+    response.parsed_response["results"] # Array of places
+  end
+  private
+
+
 
   def generate_openai_response
     return if self.openai_response.present?
