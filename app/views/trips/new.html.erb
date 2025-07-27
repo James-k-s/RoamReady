@@ -42,11 +42,11 @@
     <h1>Create your new trip</h1>
     <div class="form-container">
       <%= simple_form_for @trip do |f| %>
-        <%= f.input :name, label: "Give your trip a name", placeholder: "Great adventure to Alaska", input_html: { class: "full-input-width" } %>
+        <%= f.input :name, label: "Give your trip a name", placeholder: "Great adventure to South Africa", input_html: { class: "full-input-width" } %>
         <%= f.input :companions, label: "How many fellow trip members", placeholder: "3", input_html: { class: "full-input-width" } %>
-        <%= f.input :location, label: "Where abouts are you heading🏕️", placeholder: "Alaska", input_html: { class: "full-input-width" }  %>
-        <%= f.input :activity, label: "What activity is the trip based around?", placeholder: "Fishing", input_html: { class: "full-input-width" } %>
-        <%= f.input :extra_information, label: "Add some extra information about your trip", placeholder: "Going to be camping, I heard the bugs are bad", input_html: { class: "full-input-width" } %>
+        <%= f.input :location, label: "Where abouts are you heading🏕️", placeholder: "Knysna, Western Cape, South Africa", input_html: { class: "full-input-width" }  %>
+        <%= f.input :activity, label: "What activity is the trip based around?", placeholder: "Fishing and boating", input_html: { class: "full-input-width" } %>
+        <%= f.input :extra_information, label: "Add some extra information about your trip", placeholder: "Going to be doing lots of water activities, I heard the water is cold and there can be sharks in the lagoon? Should I be concerned?", input_html: { class: "full-input-width" } %>
         <div class="date-flex">
           <%= f.input :start_date, as: :date, input_html: { class: "full-input-width" } %>
           <%= f.input :end_date, as: :date, input_html: { class: "full-input-width" } %>
